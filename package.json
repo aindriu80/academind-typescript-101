@@ -11,7 +11,7 @@
     "typescript",
     "course"
   ],
-  "author": "Aindriú Mac Giolla eoin",
+  "author": "Aindriú Mac Giolla Eoin",
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.5.4"
