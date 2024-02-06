@@ -1,30 +1,30 @@
-import { Project, ProjectStatus } from '../models/project.js'
+import { Project, ProjectStatus } from "../models/project";
 
 // Project State Management
-type Listener<T> = (items: T[]) => void
+type Listener<T> = (items: T[]) => void;
 
 class State<T> {
-  protected listeners: Listener<T>[] = []
+  protected listeners: Listener<T>[] = [];
 
   addListener(listenerFn: Listener<T>) {
-    this.listeners.push(listenerFn)
+    this.listeners.push(listenerFn);
   }
 }
 
 export class ProjectState extends State<Project> {
-  private projects: Project[] = []
-  private static instance: ProjectState
+  private projects: Project[] = [];
+  private static instance: ProjectState;
 
   private constructor() {
-    super()
+    super();
   }
 
   static getInstance() {
     if (this.instance) {
-      return this.instance
+      return this.instance;
     }
-    this.instance = new ProjectState()
-    return this.instance
+    this.instance = new ProjectState();
+    return this.instance;
   }
 
   addProject(title: string, description: string, numOfPeople: number) {
@@ -33,23 +33,23 @@ export class ProjectState extends State<Project> {
       title,
       description,
       numOfPeople,
-      ProjectStatus.Active
-    )
-    this.projects.push(newProject)
-    this.updateListeners()
+      ProjectStatus.Active,
+    );
+    this.projects.push(newProject);
+    this.updateListeners();
   }
   moveProject(projectId: string, newStatus: ProjectStatus) {
-    const project = this.projects.find((prj) => prj.id === projectId)
+    const project = this.projects.find((prj) => prj.id === projectId);
     if (project && project.status !== newStatus) {
-      project.status = newStatus
-      this.updateListeners()
+      project.status = newStatus;
+      this.updateListeners();
     }
   }
   private updateListeners() {
     for (const listenerFn of this.listeners) {
-      listenerFn(this.projects.slice())
+      listenerFn(this.projects.slice());
     }
   }
 }
 
-export const projectState = ProjectState.getInstance()
+export const projectState = ProjectState.getInstance();
