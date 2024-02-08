@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import { plainToClass } from "class-transformer";
+import { validate } from "class-validator";
 
 import { ProjectInput } from "./components/project-input";
 import { ProjectList } from "./components/project-list";
@@ -32,3 +33,13 @@ for (const prod of plainLoadedProducts) {
   console.log("placeToClass ", prod.getInformation());
 }
 console.log("plainToClass ", plainLoadedProducts);
+
+const newProd = new Product("", -5.99);
+validate(newProd).then((errors) => {
+  if (errors.length > 0) {
+    console.log("Validation Errors!!");
+    console.log(errors);
+  } else {
+    console.log("classTransformer ", newProd.getInformation());
+  }
+});

@@ -8,6 +8,9 @@ dependencies:
   class-transformer:
     specifier: ^0.5.1
     version: 0.5.1
+  class-validator:
+    specifier: ^0.14.1
+    version: 0.14.1
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -252,6 +255,10 @@ packages:
     dependencies:
       '@types/node': 20.11.16
     dev: true
+
+  /@types/validator@13.11.9:
+    resolution: {integrity: sha512-FCTsikRozryfayPuiI46QzH3fnrOoctTjvOYZkho9BTFLCOZ2rgZJHMOVgCOfttjPJcgOx52EpkY0CMfy87MIw==}
+    dev: false
 
   /@types/ws@8.5.10:
     resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
@@ -738,6 +745,14 @@ packages:
 
   /class-transformer@0.5.1:
     resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
+    dev: false
+
+  /class-validator@0.14.1:
+    resolution: {integrity: sha512-2VEG9JICxIqTpoK1eMzZqaV+u/EiwEJkMGzTrZf6sU/fwsnOITVgYJ8yojSy6CaXtO9V0Cc6ZQZ8h8m4UBuLwQ==}
+    dependencies:
+      '@types/validator': 13.11.9
+      libphonenumber-js: 1.10.55
+      validator: 13.11.0
     dev: false
 
   /clean-webpack-plugin@4.0.0(webpack@5.90.1):
@@ -1692,6 +1707,10 @@ packages:
       picocolors: 1.0.0
       shell-quote: 1.8.1
     dev: true
+
+  /libphonenumber-js@1.10.55:
+    resolution: {integrity: sha512-MrTg2JFLscgmTY6/oT9vopYETlgUls/FU6OaeeamGwk4LFxjIgOUML/ZSZICgR0LPYXaonVJo40lzMvaaTJlQA==}
+    dev: false
 
   /limiter@1.1.5:
     resolution: {integrity: sha512-FWWMIEOxz3GwUI4Ts/IvgVy6LPvoMPgjMdQ185nN6psJyBJ4yOpzqm695/h5umdLJg2vW3GR5iG11MAkR2AzJA==}
@@ -2734,6 +2753,11 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
     dev: true
+
+  /validator@13.11.0:
+    resolution: {integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
